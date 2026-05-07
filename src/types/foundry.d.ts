@@ -15,9 +15,12 @@ interface FoundryModule {
 }
 
 interface FoundryGame {
-  user: { isGM: boolean };
+  user: { id: string; isGM: boolean };
   world: { id: string; title: string };
   modules: { get(id: string): FoundryModule | undefined };
+  actors: ReadonlyArray<FoundryActor> & {
+    get(id: string): FoundryActor | undefined;
+  };
   settings: {
     register(moduleId: string, key: string, options: SettingRegistration): void;
     get(moduleId: string, key: string): unknown;
@@ -27,6 +30,20 @@ interface FoundryGame {
     localize(key: string): string;
     format(key: string, data: Record<string, unknown>): string;
   };
+}
+
+interface FoundryActor {
+  id: string;
+  name: string;
+  type: string;
+  hasPlayerOwner: boolean;
+  system: {
+    coins?: { pp?: number; gp?: number; sp?: number; cp?: number };
+  };
+  update(
+    changes: Record<string, unknown>,
+    options?: Record<string, unknown>
+  ): Promise<FoundryActor>;
 }
 
 declare const Hooks: {
@@ -40,7 +57,13 @@ declare const game: FoundryGame;
 declare const ui: unknown;
 declare const canvas: unknown;
 declare const CONFIG: unknown;
-declare const ChatMessage: unknown;
+
+declare const ChatMessage: {
+  create(
+    data: Record<string, unknown>,
+    options?: Record<string, unknown>
+  ): Promise<unknown>;
+};
 
 declare namespace foundry {
   namespace utils {
@@ -49,7 +72,6 @@ declare namespace foundry {
 
   namespace applications {
     namespace api {
-      // We type ApplicationV2 narrowly — only the surface the module relies on.
       class ApplicationV2 {
         static DEFAULT_OPTIONS: Record<string, unknown>;
         static PARTS: Record<string, { template: string }>;
@@ -59,7 +81,6 @@ declare namespace foundry {
         close(options?: Record<string, unknown>): Promise<this>;
       }
 
-      // Mixin signature is intentionally loose; Foundry uses an open class type.
       function HandlebarsApplicationMixin<
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         T extends new (...args: any[]) => unknown

@@ -3,6 +3,7 @@ import { registerSettings } from './settings.js';
 import { onReady } from './hooks/ready.js';
 import { registerSceneControls } from './ui/scene-controls.js';
 import { ReserveApp } from './ui/apps/reserve-app.js';
+import { DistributeApp } from './ui/apps/distribute-app.js';
 
 Hooks.once('init', () => {
   console.log(`[${MODULE_ID}] init`);
@@ -17,6 +18,7 @@ Hooks.once('ready', () => {
   if (mod) {
     mod.api = {
       openReserve: () => new ReserveApp().render(true),
+      openDistribute: () => new DistributeApp().render(true),
     };
   }
 });

@@ -65,8 +65,97 @@
   white-space: nowrap;
 }
 
-.pwm-reserve .pwm-error {
+.pwm-reserve .pwm-error,
+.pwm-distribute .pwm-error {
   margin: 0.5rem 0 0;
   color: #b00020;
   font-size: 0.85rem;
+}
+
+.pwm-app .pwm-distribute {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 0.25rem;
+}
+
+.pwm-distribute header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.pwm-distribute .pwm-balance-line {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.pwm-distribute fieldset {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.pwm-distribute legend {
+  padding: 0 0.5rem;
+  font-size: 0.85rem;
+}
+
+.pwm-distribute .pwm-amount {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.pwm-distribute .pwm-amount label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.85rem;
+}
+
+.pwm-distribute .pwm-flavor input {
+  width: 100%;
+}
+
+.pwm-distribute .pwm-recipients ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pwm-distribute .pwm-recipients li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0;
+  gap: 0.5rem;
+}
+
+.pwm-distribute .pwm-pc-name {
+  margin-left: 0.25rem;
+}
+
+.pwm-distribute .pwm-share {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.pwm-distribute .pwm-share input[type='number'] {
+  width: 6rem;
+}
+
+.pwm-distribute .pwm-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.9rem;
+}
+
+.pwm-distribute .pwm-actions {
+  display: flex;
+  justify-content: flex-end;
 }
