@@ -1,1 +1,72 @@
-/* pf2e-wealth-manager styles. UI components add scoped rules here as panels are built. */
+/* pf2e-wealth-manager styles */
+
+.pwm-app .pwm-reserve {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.5rem 0.25rem;
+}
+
+.pwm-reserve header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.pwm-reserve .pwm-persona {
+  margin: 0.25rem 0 0;
+  font-style: italic;
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+.pwm-reserve .pwm-balance {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.pwm-reserve .pwm-balance span {
+  display: inline-flex;
+  gap: 0.15rem;
+  align-items: baseline;
+  font-variant-numeric: tabular-nums;
+}
+
+.pwm-reserve .pwm-mint fieldset {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 0.5rem;
+  align-items: end;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.pwm-reserve .pwm-mint legend {
+  padding: 0 0.5rem;
+  font-size: 0.85rem;
+}
+
+.pwm-reserve .pwm-mint label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.85rem;
+}
+
+.pwm-reserve .pwm-mint input[type='number'] {
+  width: 100%;
+  min-width: 0;
+}
+
+.pwm-reserve .pwm-mint button {
+  white-space: nowrap;
+}
+
+.pwm-reserve .pwm-error {
+  margin: 0.5rem 0 0;
+  color: #b00020;
+  font-size: 0.85rem;
+}

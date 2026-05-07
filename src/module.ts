@@ -1,12 +1,22 @@
 import { MODULE_ID } from './constants.js';
 import { registerSettings } from './settings.js';
 import { onReady } from './hooks/ready.js';
+import { registerSceneControls } from './ui/scene-controls.js';
+import { ReserveApp } from './ui/apps/reserve-app.js';
 
 Hooks.once('init', () => {
   console.log(`[${MODULE_ID}] init`);
   registerSettings();
+  registerSceneControls();
 });
 
 Hooks.once('ready', () => {
   void onReady();
+  // Console/macro fallback for opening panels.
+  const mod = game.modules.get(MODULE_ID);
+  if (mod) {
+    mod.api = {
+      openReserve: () => new ReserveApp().render(true),
+    };
+  }
 });
