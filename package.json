@@ -1,0 +1,26 @@
+{
+  "name": "pf2e-wealth-manager",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "GM-curated, traceable, multi-faction currency for PF2E in FoundryVTT.",
+  "scripts": {
+    "dev": "vite build --watch --mode development",
+    "build": "vite build",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "echo \"lint not yet configured\"",
+    "typecheck": "tsc --noEmit",
+    "package": "npm run build && echo \"package step not yet implemented (see Task 18)\""
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@vitest/coverage-v8": "^2.1.0",
+    "svelte": "^5.0.0",
+    "typescript": "^5.5.0",
+    "vite": "^5.4.0",
+    "vite-plugin-static-copy": "^1.0.6",
+    "vitest": "^2.1.0"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "pf2e-wealth-manager",
+  "title": "PF2E Wealth Manager",
+  "description": "GM-curated, traceable, multi-faction currency for PF2E.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "pf2e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "7.0.0"
+        }
+      }
+    ]
+  },
+  "esmodules": ["module.js"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "styles": ["styles/module.css"],
+  "authors": [
+    {
+      "name": "jlevay-mn"
+    }
+  ],
+  "url": "",
+  "manifest": "",
+  "download": ""
+}
