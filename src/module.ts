@@ -4,6 +4,8 @@ import { onReady } from './hooks/ready.js';
 import { registerSceneControls } from './ui/scene-controls.js';
 import { ReserveApp } from './ui/apps/reserve-app.js';
 import { DistributeApp } from './ui/apps/distribute-app.js';
+import { LedgerApp } from './ui/apps/ledger-app.js';
+import { AuditApp } from './ui/apps/audit-app.js';
 
 Hooks.once('init', () => {
   console.log(`[${MODULE_ID}] init`);
@@ -19,6 +21,8 @@ Hooks.once('ready', () => {
     mod.api = {
       openReserve: () => new ReserveApp().render(true),
       openDistribute: () => new DistributeApp().render(true),
+      openLedger: () => new LedgerApp().render(true),
+      openAudit: () => new AuditApp().render(true),
     };
   }
 });

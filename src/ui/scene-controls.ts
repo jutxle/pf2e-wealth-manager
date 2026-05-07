@@ -1,5 +1,7 @@
 import { ReserveApp } from './apps/reserve-app.js';
 import { DistributeApp } from './apps/distribute-app.js';
+import { LedgerApp } from './apps/ledger-app.js';
+import { AuditApp } from './apps/audit-app.js';
 import { MODULE_ID } from '../constants.js';
 
 interface SceneControl {
@@ -33,9 +35,7 @@ export function registerSceneControls(): void {
       icon: 'fas fa-coins',
       button: true,
       visible: true,
-      onClick: () => {
-        void new ReserveApp().render(true);
-      },
+      onClick: () => void new ReserveApp().render(true),
     });
 
     pushTool(tokens.tools, {
@@ -44,9 +44,25 @@ export function registerSceneControls(): void {
       icon: 'fas fa-hand-holding-usd',
       button: true,
       visible: true,
-      onClick: () => {
-        void new DistributeApp().render(true);
-      },
+      onClick: () => void new DistributeApp().render(true),
+    });
+
+    pushTool(tokens.tools, {
+      name: `${MODULE_ID}-ledger`,
+      title: 'Wealth Manager — Ledger',
+      icon: 'fas fa-scroll',
+      button: true,
+      visible: true,
+      onClick: () => void new LedgerApp().render(true),
+    });
+
+    pushTool(tokens.tools, {
+      name: `${MODULE_ID}-audit`,
+      title: 'Wealth Manager — Audit',
+      icon: 'fas fa-balance-scale',
+      button: true,
+      visible: true,
+      onClick: () => void new AuditApp().render(true),
     });
   });
 }

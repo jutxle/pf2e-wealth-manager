@@ -155,7 +155,170 @@
   font-size: 0.9rem;
 }
 
-.pwm-distribute .pwm-actions {
+.pwm-distribute .pwm-actions,
+.pwm-audit .pwm-actions {
   display: flex;
   justify-content: flex-end;
+}
+
+/* Ledger panel */
+
+.pwm-app .pwm-ledger {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 0.25rem;
+  height: 100%;
+  min-height: 0;
+}
+
+.pwm-ledger header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.pwm-ledger .pwm-meta {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.pwm-ledger .pwm-filters {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.pwm-ledger .pwm-filters legend {
+  padding: 0 0.5rem;
+  font-size: 0.85rem;
+}
+
+.pwm-ledger .pwm-filters > label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.85rem;
+}
+
+.pwm-ledger .pwm-flow-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.pwm-ledger .pwm-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  gap: 0.15rem 0.75rem;
+}
+
+.pwm-ledger .pwm-flow-grid label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.pwm-ledger button.pwm-link {
+  background: none;
+  border: none;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+}
+
+.pwm-ledger .pwm-tx {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  flex: 1;
+  display: block;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.pwm-ledger .pwm-tx thead,
+.pwm-ledger .pwm-tx tbody,
+.pwm-ledger .pwm-tx tr {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.pwm-ledger .pwm-tx th,
+.pwm-ledger .pwm-tx td {
+  text-align: left;
+  padding: 0.25rem 0.4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.pwm-ledger .pwm-tx .pwm-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.pwm-ledger .pwm-empty {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.pwm-ledger .pwm-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+/* Audit panel */
+
+.pwm-app .pwm-audit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.5rem 0.25rem;
+}
+
+.pwm-audit header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.pwm-audit .pwm-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.pwm-audit .pwm-result .pwm-ok {
+  color: #1b6e2c;
+}
+
+.pwm-audit .pwm-result .pwm-fail {
+  color: #b00020;
+}
+
+.pwm-audit .pwm-divergence {
+  border-collapse: collapse;
+  margin: 0.25rem 0;
+}
+
+.pwm-audit .pwm-divergence th {
+  text-align: right;
+  padding: 0.15rem 0.5rem 0.15rem 0;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.pwm-audit .pwm-divergence td {
+  font-variant-numeric: tabular-nums;
 }
